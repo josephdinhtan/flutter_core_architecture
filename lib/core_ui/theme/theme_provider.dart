@@ -31,8 +31,10 @@ class ThemeProvider extends InheritedWidget {
     final dynamicPrimary = brightness == Brightness.light
         ? lightDynamic?.primary
         : darkDynamic?.primary;
+
     return ColorScheme.fromSeed(
-      seedColor: dynamicPrimary ?? source(targetColor),
+      seedColor: source(targetColor),
+      //seedColor: dynamicPrimary ?? source(targetColor),
       brightness: brightness,
     );
   }
